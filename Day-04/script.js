@@ -18,12 +18,32 @@ const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick
 // Filter
 const inventorsFind = inventors.filter(inventor => inventor.year > 1600)
 const inventorMap = inventorsFind.map(({first, last}) => `${first} ${last}`).join(', ')
-console.table(inventorMap)
+// console.table(inventorMap)
 
 // Map
 const MappingPeople = inventors.map(({first, last}) => `${first} ${last}`)
-console.table(MappingPeople)
+// console.table(MappingPeople)
 
 // sort
 const sorting = inventors.sort((a, b) => a.year > b.year ? -1 : 1)
-console.table(sorting)
+// console.table(sorting)
+// 
+// Reduce
+
+const totalYear = inventors.reduce((total, inventor) => {
+    const inventorAge = inventor.passed - inventor.year
+    return total += inventorAge
+}, 0)
+
+// console.log(totalYear)
+
+
+// People sorting
+const peoples = people.sort((firstOne, LastOne) => {
+    const [aFirst, aLast] = firstOne.split(', ')
+    const [bFirst, bLast] = LastOne.split(', ')
+
+    // console.table(aFirst, bLast)
+    // console.log('Enamul Haque')
+    console.table(bFirst, bLast)
+})
