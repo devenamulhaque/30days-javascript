@@ -4,6 +4,13 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --spacing: 10px;
+    --blur: 10px;
+    --bg-color: #ff0000;
+}
+
 img {
     max-width: 100%;
     vertical-align: middle;
@@ -28,6 +35,7 @@ body {
 .blur-image {
     max-width: 500px;
     margin: auto;
-    padding: 10px;
-    background-color: red;
+    padding: var(--spacing);
+    background-color: var(--bg-color);
+    filter: blur(var(--blur));
 }

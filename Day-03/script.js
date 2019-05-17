@@ -1,7 +1,11 @@
 const inputs = document.querySelectorAll('.handler input')
 
-const handlerUpdate = e => {
-    console.log(e.target.value)
+function handlerUpdate() {
+    const suffix = this.dataset.sizing || ''
+    document.documentElement.style.setProperty(
+        `--${this.name}`,
+        this.value + suffix
+    )
 }
 
 inputs.forEach(input => input.addEventListener('change', handlerUpdate))
